@@ -1,10 +1,7 @@
 #!/bin/bash
 
-echo Input two numbers with space in between
-
-read a b
-
-echo $a $b
+a=$1 
+b=$2
 
 #変数の数が2より小さい場合
 if [ -z "$b" ] >&/dev/null;
