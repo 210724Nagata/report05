@@ -41,12 +41,10 @@ echo "!ERROR!a is not a number.Input an integer." > ${ans}
 ./report5.sh 22 "a" > ${result}
 diff ${ans} ${result} || echo "error in 2-6" >> ${err}
 
-if [ -f ${err} ];
-then
-	cat ${erro}
-	rm /tmp/$$-*
-	exit 1
+#if [ -f ${err} ];
+#then
+#	cat ${erro}
+#	rm /tmp/$$-*
+#	exit 1
+#fi 
 
-else    rm /tmp/$$-*
-
-fi
