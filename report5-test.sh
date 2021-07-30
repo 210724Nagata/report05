@@ -22,8 +22,8 @@ echo "!ERROR!:Input number which is greater than 0." > ${ans}
 diff ${ans} ${result} || echo "error in 2-2" >> ${err}
 
 #テスト2-3：変数が数字じゃない場合(小数$a)
-echo "!ERROR!-0.1 is not a number.Input an integer." > ${ans}
-./report5.sh -0.1 22 > ${result}
+echo "!ERROR! 0.1 is not a number.Input an integer." > ${ans}
+./report5.sh 0.1 22 > ${result}
 diff ${ans} ${result} || echo "error in 2-3" >> ${err}
 
 #テスト2-4：変数が数字じゃない場合(文字$a)
