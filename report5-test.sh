@@ -32,7 +32,7 @@ echo "!ERROR!a is not a number.Input an integer." > ${ans}
 diff ${ans} ${result} || echo "error in 2-4" >> ${err}
 
 #テスト2-5：変数が数字じゃない場合(小数$b)
-echo "!ERROR!-0.1 is not a number.Input an integer." > ${ans}
+echo "!ERROR!0.1 is not a number.Input an integer." > ${ans}
 ./report5.sh 22 0.1 > ${result}
 diff ${ans} ${result} || echo "error in 2-5" >> ${err}
 
@@ -41,10 +41,12 @@ echo "!ERROR!a is not a number.Input an integer." > ${ans}
 ./report5.sh 22 "a" > ${result}
 diff ${ans} ${result} || echo "error in 2-6" >> ${err}
 
-#if [ -f ${err} ];
-#then
-#	cat ${erro}
-#	rm /tmp/$$-*
-#	exit 1
-#fi 
+if [ -f ${err} ];
+then
+	cat ${erro}
+	rm /tmp/$$-*
+	exit 1
+else
+        rm /tmp/$$-*
+fi 
 

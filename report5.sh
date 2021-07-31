@@ -21,16 +21,18 @@ fi
 
 if expr "$a" : "[0-9]*$" >&/dev/null;
 then
-	1>/dev/null
+        1>/dev/null
 else
 	echo "!ERROR!$a is not a number.Input an integer."
+	exit 1
 fi
 
 if expr "$b" : "[0-9]*$" >&/dev/null;
 then
-	1>/dev/null
+        1>/dev/null
 else
 	echo "!ERROR!$b is not a number.Input an integer."
+    	exit 1    
 fi
 
 
@@ -44,12 +46,12 @@ if [ $b -lt $P ] >&/dev/null;
 	P=$b
 fi
 
-while [ $P -ne 0 ] >&/dev/null
+while [ $P -ne 0 ] >&/dev/null;
 	do
 		x=$(expr $a % $P)
 		y=$(expr $b % $P)
  
-	if [ $x -eq 0 -a $y -eq 0 ];
+	if [ "$x" -eq 0 -a "$y" -eq 0 ] >&/dev/null;
 	then
 		echo GCD of $a and $b is $P
 	break
